@@ -28,7 +28,7 @@
 
     /* ── Reset & base ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; font-size: 16px; max-width: 100%; overflow-x: hidden; }
     body {
       background: var(--bg);
       color: var(--text);
@@ -36,6 +36,7 @@
       line-height: 1.6;
       transition: background 0.25s, color 0.25s;
       overflow-x: hidden;
+      width: 100%;
     }
     a {
       color: var(--accent);
@@ -45,11 +46,10 @@
     a:hover { color: var(--accent-h); text-decoration: underline; }
 
     /* ── Layout ── */
-   .container {
+    .container {
       max-width: 800px;
       margin: 0 auto;
       padding: 0 24px;
-      box-sizing: border-box;
       width: 100%;
     }
 
@@ -439,7 +439,7 @@
     }
 
    /* ── Responsive ── */
-    @media (max-width: 768px) {
+        @media (max-width: 768px) {
       .nav-links { gap: 10px; }
       .nav-links a { font-size: 0.75rem; }
       .interests-grid { grid-template-columns: 1fr; }
@@ -447,6 +447,9 @@
       .contact-grid { grid-template-columns: 1fr; }
       #hero { padding: 56px 0 48px; }
       .hero-bg { display: none; }
+      .hero-links { gap: 8px; }
+      .hero-link { font-size: 0.8rem; padding: 6px 12px; }
+      .pub-meta { flex-direction: column; gap: 4px; }
     }
   </style>
 </head>
